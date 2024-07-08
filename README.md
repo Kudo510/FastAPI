@@ -20,13 +20,14 @@ Build the Docker Image
 
     docker build -t myimage .
 
-Terst on your local
+Test on your local
 
     docker run -p 8000:80 myimage
 
     Then check on http://localhost:8000/docs
 
 Start the Docker Container¶
+
     docker run -d --name mycontainer -p 80:80 myimage
     
     Now you can go to http://localhost:80/docs
