@@ -17,10 +17,14 @@ Click on openapi.json - all information about your fastapi server as in json fil
 ## Build Docker Image
 
 Build the Docker Image
+
     docker build -t myimage .
+
+Terst on your local
+
     docker run -p 8000:80 myimage
 
-    http://localhost:8000/docs
+    Then check on http://localhost:8000/docs
 
 Start the Docker Container¶
     docker run -d --name mycontainer -p 80:80 myimage
