@@ -1,6 +1,6 @@
 # Simple FastAPI Example
 
-This is a basic example of a FastAPI application.
+FastAPI application with docker and Kubernett
 
 ## Run 
 To run your app on server, use uvicorn
@@ -18,8 +18,23 @@ Click on openapi.json - all information about your fastapi server as in json fil
 
 Build the Docker Image
     docker build -t myimage .
+    docker run -p 8000:80 myimage
+
+    http://localhost:8000/docs
 
 Start the Docker Container¶
     docker run -d --name mycontainer -p 80:80 myimage
+    
+    Now you can go to http://localhost:80/docs
 
-Now you can go to http://192.168.99.100/docs or http://127.0.0.1/docs (or equivalent, using your Docker host).
+## Push the image to Docker Hub:
+
+    docker login
+    
+    docker push your-username/your-app-name:tag
+
+## To use the uploaded image
+
+    docker pull your-username/your-app-name:tag
+
+    docker run -p 80:80 your-username/your-app-name:tag
