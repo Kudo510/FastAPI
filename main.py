@@ -1,5 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
+import uvicorn
 
 app = FastAPI()
 
@@ -34,3 +35,12 @@ def get_item(item_id: int) -> Item:
         return items[item_id]
     else:
         raise HTTPException(status_code=404, detail=f"Item {item_id} not found")
+
+
+def main():
+    # uvicorn.run("service:app", host="0.0.0.0", port=50052)
+    uvicorn.run(app, host="0.0.0.0", port=50050) # app cos app = FastAPI() at line 5
+
+
+if __name__ == '__main__':
+    main()
