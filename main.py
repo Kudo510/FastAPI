@@ -39,7 +39,7 @@ def get_item(item_id: int) -> Item:
 
 def main():
     # uvicorn.run("service:app", host="0.0.0.0", port=50052)
-    uvicorn.run(app, host="0.0.0.0", port=50050) # app cos app = FastAPI() at line 5
+    uvicorn.run(app, host="0.0.0.0", port=50056) # app cos app = FastAPI() at line 5
 
 
 if __name__ == '__main__':
